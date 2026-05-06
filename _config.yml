@@ -1,0 +1,107 @@
+# Site — replace YOUR values before pushing (repository must match GitHub repo: owner/name)
+repository: yourusername/your-repo-name
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Zhongyu Chen
+title: Undergraduate Student
+email: chenzhongyu56@gmail.com
+website: github.com/yourusername
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links (uncomment and set as needed)
+# twitter_username: yourhandle
+github_username: yourusername
+# stackoverflow_username: "00000001"
+# linkedin_username: yourhandle
+# instagram_username: yourhandle
+# youtube_username: yourchannel
+
+# Additional icon links
+additional_links:
+  - title: Personal site
+    icon: fas fa-globe
+    url: https://yourusername.github.io
+# - title: another link
+#   icon: fab fa-github
+#   url: https://github.com/yourusername
+
+# Google Analytics and Tag Manager
+# gtm: "GTM-0000000"
+# gtag: "G-XXXXXXXXXX"
+
+# About Section
+about_profile_image: images/profile.jpg
+about_content: |
+  Short introduction about you. Edit this text in `_config.yml` under `about_content`.
+
+  Highlight skills with <mark>keywords</mark> if you like.
+
+content:
+  - title: Projects
+    layout: list
+    content:
+      - layout: top-middle
+        title: Example project
+        link: github.com/yourusername
+        additional_links:
+          - title: yourusername/example-repo
+            icon: fab fa-github
+            url: github.com/yourusername/example-repo
+        quote: >
+          One-line pitch for the project.
+        description: |
+          Describe what you built, what you learned, and technologies used (e.g. <mark>React</mark>).
+
+  - title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: Company name
+        link: example.com
+        sub_title: Role title
+        caption: Start date - Present
+        quote: >
+          Optional short quote or tagline.
+        description: |
+          What you did, impact, and team context.
+
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: University name
+        caption: Years
+        sub_title: Degree / field
+        quote: >
+          Optional line about the program.
+        description: |
+          Coursework, activities, or achievements.
+
+  - title: A Little More About Me
+    layout: text
+    content: |
+      Interests, hobbies, or links:
+      - Item one
+      - Item two
+
+      Optional image (add `images/landscape-trees.jpg` to the repo or change path):
+      ![Example](images/landscape-trees.jpg "Example")
+
+# Footer
+footer_show_references: true
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
