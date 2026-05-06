@@ -35,13 +35,15 @@
 .content-with-side__aside {
   flex: 0 0 auto;
   align-self: flex-start;
+  max-width: 3.5rem;
 }
 
 .content-with-side__logo {
   display: block;
-  width: 6rem;
+  width: auto;
   height: auto;
-  max-height: 6.5rem;
+  max-width: 3.25rem;
+  max-height: 3.25rem;
   object-fit: contain;
 }
 
