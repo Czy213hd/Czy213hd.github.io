@@ -3,3 +3,55 @@
 ---
 
 @import 'modern-resume-theme';
+
+// ID-style headshot (about): portrait crop, not only center of frame
+.intro-container .profile-img {
+  border-radius: 10px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-position: center 15%;
+  background-size: cover;
+}
+
+// Optional right-side image for list sections (e.g. school logos in Education)
+.content-with-side {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.content-with-side--no-image .content-with-side__body {
+  width: 100%;
+}
+
+.content-with-side__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.content-with-side__aside {
+  flex: 0 0 auto;
+  align-self: flex-start;
+}
+
+.content-with-side__logo {
+  display: block;
+  width: 6rem;
+  height: auto;
+  max-height: 6.5rem;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .content-with-side {
+    flex-wrap: wrap;
+  }
+
+  .content-with-side__aside {
+    margin-left: auto;
+  }
+}
+

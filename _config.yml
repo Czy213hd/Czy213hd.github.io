@@ -36,8 +36,8 @@ additional_links:
 # gtm: "GTM-0000000"
 # gtag: "G-XXXXXXXXXX"
 
-# About Section
-about_profile_image: images/profile.jpg
+# About Section — 证件照：images/id-photo.png
+about_profile_image: images/id-photo.png
 about_content: |
   Hi, I'm Zhongyu Chen, an undergraduate student. Edit this introduction in `_config.yml`.
 
@@ -75,25 +75,29 @@ content:
   - title: Education
     layout: list
     content:
+      # 校徽图放在 images/zju.png（右侧展示）
       - layout: left
         title: Zhejiang University
         link: zju.edu.cn
-        sub_title: Degree / program (edit)
-        caption: Year – Year
+        image: images/zju.png
+        sub_title: Bachelor of Engineering - BE, Mechanical Engineering
+        caption: 2023 – 2027
         quote: >
-          Major comprehensive university in Hangzhou; edit dates and degree above.
+          Undergraduate program in mechanical engineering.
         description: |
-          Replace with coursework, honors, activities, or other highlights.
+          Coursework, projects, and activities at Zhejiang University.
 
+      # 校徽图：images/uiuc.jpg（右侧展示）
       - layout: left
-        title: University of Illinois at Urbana-Champaign
+        title: University of Illinois Urbana-Champaign
         link: illinois.edu
-        sub_title: Degree / program (edit)
-        caption: Year – Present
+        image: images/uiuc.jpg
+        sub_title: Bachelor of Engineering - BE, Mechanical Engineering
+        caption: 2023 – 2027
         quote: >
-          Public research university in Illinois; edit dates and degree above.
+          Undergraduate program in mechanical engineering.
         description: |
-          Replace with coursework, research, honors, or student organizations.
+          Coursework, projects, and activities at UIUC.
 
   - title: A Little More About Me
     layout: text
