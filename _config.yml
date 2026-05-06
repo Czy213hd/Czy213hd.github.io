@@ -1,5 +1,5 @@
-# Site — replace YOUR values before pushing (repository must match GitHub repo: owner/name)
-repository: yourusername/your-repo-name
+# Site — repository must match this GitHub repo exactly (owner/repo-name)
+repository: chenzhongyu56/chenzhongyu56.github.io
 favicon: images/favicon.ico
 
 # Content configuration version
@@ -9,14 +9,14 @@ version: 2
 name: Zhongyu Chen
 title: Undergraduate Student
 email: chenzhongyu56@gmail.com
-website: github.com/yourusername
+website: github.com/chenzhongyu56
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links (uncomment and set as needed)
 # twitter_username: yourhandle
-github_username: yourusername
+github_username: chenzhongyu56
 # stackoverflow_username: "00000001"
 # linkedin_username: yourhandle
 # instagram_username: yourhandle
@@ -26,10 +26,10 @@ github_username: yourusername
 additional_links:
   - title: Personal site
     icon: fas fa-globe
-    url: https://yourusername.github.io
+    url: https://chenzhongyu56.github.io
 # - title: another link
 #   icon: fab fa-github
-#   url: https://github.com/yourusername
+#   url: https://github.com/chenzhongyu56
 
 # Google Analytics and Tag Manager
 # gtm: "GTM-0000000"
@@ -38,7 +38,7 @@ additional_links:
 # About Section
 about_profile_image: images/profile.jpg
 about_content: |
-  Short introduction about you. Edit this text in `_config.yml` under `about_content`.
+  Hi, I'm Zhongyu Chen, an undergraduate student. Edit this introduction in `_config.yml`.
 
   Highlight skills with <mark>keywords</mark> if you like.
 
@@ -48,11 +48,11 @@ content:
     content:
       - layout: top-middle
         title: Example project
-        link: github.com/yourusername
+        link: github.com/chenzhongyu56
         additional_links:
-          - title: yourusername/example-repo
+          - title: chenzhongyu56/example-repo
             icon: fab fa-github
-            url: github.com/yourusername/example-repo
+            url: github.com/chenzhongyu56/example-repo
         quote: >
           One-line pitch for the project.
         description: |
