@@ -14,7 +14,7 @@
   background-size: cover;
 }
 
-// Optional right-side image for list sections (e.g. school logos in Education)
+// List sections: quote + description (Projects / Experience)
 .content-with-side {
   display: flex;
   flex-direction: row;
@@ -32,13 +32,45 @@
   min-width: 0;
 }
 
-.content-with-side__aside {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  max-width: 3.5rem;
+// Education rows with logo: title/degree left; date + site top-right; logo bottom-right
+.education-card__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.content-with-side__logo {
+.education-card__titles {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.education-card__meta {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.education-card__caption {
+  margin: 0 0 0.35rem;
+}
+
+.education-card__link {
+  margin: 0;
+}
+
+.education-card__icons {
+  margin-bottom: 0;
+}
+
+.education-card__bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 0.5rem;
+}
+
+.education-card__logo {
   display: block;
   width: auto;
   height: auto;
@@ -48,12 +80,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .content-with-side {
-    flex-wrap: wrap;
-  }
-
-  .content-with-side__aside {
-    margin-left: auto;
+  .education-card__meta {
+    text-align: right;
   }
 }
 
