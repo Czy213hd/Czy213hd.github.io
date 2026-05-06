@@ -10,6 +10,7 @@ name: Zhongyu Chen
 title: Undergraduate Student
 email: chenzhongyu56@gmail.com
 website: github.com/Czy213hd
+website_title: Personal Web
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -75,13 +76,24 @@ content:
     layout: list
     content:
       - layout: left
-        title: University name
-        caption: Years
-        sub_title: Degree / field
+        title: Zhejiang University
+        link: zju.edu.cn
+        sub_title: Degree / program (edit)
+        caption: Year – Year
         quote: >
-          Optional line about the program.
+          Major comprehensive university in Hangzhou; edit dates and degree above.
         description: |
-          Coursework, activities, or achievements.
+          Replace with coursework, honors, activities, or other highlights.
+
+      - layout: left
+        title: University of Illinois at Urbana-Champaign
+        link: illinois.edu
+        sub_title: Degree / program (edit)
+        caption: Year – Present
+        quote: >
+          Public research university in Illinois; edit dates and degree above.
+        description: |
+          Replace with coursework, research, honors, or student organizations.
 
   - title: A Little More About Me
     layout: text
