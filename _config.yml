@@ -100,8 +100,8 @@ content:
     content:
       - layout: left
         title: ManiSkill-ViTac Challenge 2026 (CVPR & ICRA workshop)
-        link: github.com/haosulab/ManiSkill
-        sub_title: Software engineering research intern · Online / THU
+        link: https://callmeray.github.io/Mani_ViTac_Challenge_2026_page
+        sub_title: Workshop organizer · Online / THU
         caption: Jan 2026 – Present
         quote: >
           Robotic manipulation with π0.5 and policy fine-tuning on expert demos.
@@ -164,12 +164,15 @@ content:
   - title: A Little More About Me
     layout: text
     content: |
-      Interests, hobbies, or links:
-      - Item one
-      - Item two
+      Outside of coursework and research, I like to spend time on:
 
-      Optional image (add `images/landscape-trees.jpg` to the repo or change path):
-      ![Example](images/landscape-trees.jpg "Example")
+      - Basketball
+      - Strength training and fitness
+      - FPS games
+      - Photography
+      - Rock climbing
+      - Ultimate frisbee
+      - …plus hiking, travel, and other outdoor activities.
 
 # Footer
 footer_show_references: true
