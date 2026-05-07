@@ -42,7 +42,7 @@ additional_links:
 # About Section — 证件照：images/id-photo.png
 about_profile_image: images/id-photo.png
 about_content: |
-  Hi, I'm Zhongyu Chen, an undergraduate student in Zhejiang University and University of Illinois Urbana-Champaign. I'm interested in machine learning and robotics.
+  Hi, I'm Zhongyu Chen, an undergraduate student majored in Mechanical Engineering at Zhejiang University and University of Illinois Urbana-Champaign. I'm interested in machine learning and robotics.
 
 content:
   - title: Projects
