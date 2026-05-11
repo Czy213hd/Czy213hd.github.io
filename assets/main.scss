@@ -2,7 +2,218 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap');
+
 @import 'modern-resume-theme';
+
+// --- Visual refresh: typography, background, cards (overrides theme defaults) ---
+:root {
+  --site-bg: #eef1f6;
+  --site-bg-accent: #e2e8f0;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --accent: #c2410c;
+  --accent-soft: rgba(194, 65, 12, 0.12);
+  --radius: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  color: var(--text);
+  background-color: var(--site-bg) !important;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 100% -20%, var(--accent-soft), transparent 55%),
+    radial-gradient(ellipse 90% 60% at -10% 40%, rgba(59, 130, 246, 0.08), transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.page-content {
+  padding-top: 0.5rem !important;
+}
+
+// Hero header
+.header-container {
+  padding: 2rem 0 2.25rem !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid var(--card-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.header-container h1 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.header-container h2 {
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+  font-size: 1.35rem !important;
+}
+
+.header-right p,
+.header-right a.link {
+  color: var(--text-muted) !important;
+}
+
+.header-right a.link:hover {
+  color: var(--accent) !important;
+}
+
+.contact a {
+  color: var(--text-muted) !important;
+}
+
+.contact a:hover {
+  color: var(--accent) !important;
+}
+
+// About block
+.intro-container {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.75rem 1.75rem 1.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.intro-container h3 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+// Section titles (Projects, Experience, …)
+.list-container > h3,
+.text-container > h3 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.45rem !important;
+  letter-spacing: -0.02em;
+  margin: 2.25rem 0 1rem !important;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--card-border);
+}
+
+// Entry rows → soft cards (skip education rows: inner .education-card is the card)
+.list-container .layout:not(.education-with-logo) {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.35rem 1.5rem !important;
+  margin-top: 1rem !important;
+}
+
+.list-container .layout:not(.education-with-logo).border-weak {
+  border-bottom: none !important;
+}
+
+.list-container .layout.education-with-logo {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+.list-container .details h4 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 600 !important;
+  color: var(--text);
+}
+
+.list-container .details p,
+.list-container .content {
+  color: var(--text-muted);
+}
+
+.list-container .details b {
+  color: var(--text);
+}
+
+.list-container a.link {
+  color: var(--accent) !important;
+}
+
+p.quote {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem !important;
+  text-align: left !important;
+}
+
+// Education cards (custom grid)
+.education-with-logo .education-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.25rem 1.5rem !important;
+  margin-top: 1rem !important;
+}
+
+.education-with-logo .education-card__titles h4 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 600 !important;
+}
+
+// Text sections
+.text-container {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem 1.75rem !important;
+  margin-top: 1rem !important;
+}
+
+.text-container > h3 {
+  margin-top: 0 !important;
+}
+
+// Footer
+.footer-container {
+  margin-top: 3rem !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-container p {
+  color: var(--text-muted);
+}
+
+.footer-container a {
+  color: var(--accent) !important;
+}
+
+mark {
+  background: var(--accent-soft);
+  color: var(--text);
+  padding: 0.05em 0.25em;
+  border-radius: 4px;
+}
 
 // ID-style headshot (about): portrait crop, not only center of frame
 .intro-container .profile-img {
