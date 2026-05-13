@@ -135,20 +135,37 @@ body {
   border-bottom: 2px solid var(--card-border);
 }
 
-// --- Card grid (layout: cards-grid) — Projects & Experience; links to detail pages ---
-.cards-grid-container .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.1rem;
+// --- Card strip (layout: cards-grid) — one row, horizontal scroll / swipe / drag ---
+.cards-grid-container .cards-scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
   margin-top: 0.5rem;
+  padding-bottom: 0.35rem;
+  scrollbar-width: thin;
 }
 
-.cards-grid-container a.project-card {
+.cards-grid-container .cards-scroller .cards-grid.project-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1.1rem;
+  width: max-content;
+  min-width: 100%;
+  padding: 2px 2px 8px;
+  box-sizing: border-box;
+}
+
+.cards-grid-container .cards-scroller a.project-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   text-align: left;
-  width: 100%;
+  flex: 0 0 auto;
+  width: min(240px, 82vw);
+  scroll-snap-align: start;
   margin: 0;
   padding: 0;
   border: 1px solid var(--card-border);
@@ -163,12 +180,12 @@ body {
   text-decoration: none;
 }
 
-.cards-grid-container a.project-card:hover {
+.cards-grid-container .cards-scroller a.project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
 }
 
-.cards-grid-container a.project-card:focus {
+.cards-grid-container .cards-scroller a.project-card:focus {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }

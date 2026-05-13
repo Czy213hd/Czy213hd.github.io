@@ -1,23 +1,97 @@
 {% comment %}
-  Card grid: image + title only; each card links to detail_url (full site path, e.g. /projects/slug/).
-  Used for Projects and Experience when layout: cards-grid.
+  Single horizontal row: scroll / swipe / drag. Cards link to detail_url.
 {% endcomment %}
 
-<div class="cards-grid project-grid" role="list">
-  {% for item in include.content %}
-    {% assign img = item.image | default: '' | strip %}
-    {% assign url = item.detail_url | default: '' | strip %}
-    {% if url != '' %}
-    <a href="{{ url | relative_url }}" class="project-card" role="listitem">
-      <span class="project-card__media">
-        {% if img != '' %}
-          <img src="{{ img | relative_url }}" alt="" loading="lazy" />
-        {% else %}
-          <span class="project-card__placeholder" aria-hidden="true">Photo</span>
-        {% endif %}
-      </span>
-      <span class="project-card__title">{{ item.title | escape }}</span>
-    </a>
-    {% endif %}
-  {% endfor %}
+<div
+  class="cards-scroller"
+  tabindex="0"
+  role="region"
+  aria-label="{{ include.aria_label | default: 'Items' }} — scroll sideways to see more">
+  <div class="cards-grid project-grid" role="list">
+    {% for item in include.content %}
+      {% assign img = item.image | default: '' | strip %}
+      {% assign url = item.detail_url | default: '' | strip %}
+      {% if url != '' %}
+      <a href="{{ url | relative_url }}" class="project-card" role="listitem">
+        <span class="project-card__media">
+          {% if img != '' %}
+            <img src="{{ img | relative_url }}" alt="" loading="lazy" />
+          {% else %}
+            <span class="project-card__placeholder" aria-hidden="true">Photo</span>
+          {% endif %}
+        </span>
+        <span class="project-card__title">{{ item.title | escape }}</span>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
+
+<script>
+(function () {
+  function initScroller(scroller) {
+    if (scroller.getAttribute('data-scroller-init') === '1') return;
+    scroller.setAttribute('data-scroller-init', '1');
+    scroller.style.cursor = 'grab';
+
+    var moved = false;
+    var drag = false;
+    var suppressClick = false;
+    var startX = 0;
+    var startScroll = 0;
+
+    scroller.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      drag = true;
+      moved = false;
+      suppressClick = false;
+      startX = e.clientX;
+      startScroll = scroller.scrollLeft;
+      scroller.style.cursor = 'grabbing';
+      try {
+        scroller.setPointerCapture(e.pointerId);
+      } catch (err) {}
+    });
+
+    scroller.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      scroller.scrollLeft = startScroll - dx;
+    });
+
+    function endDrag(e) {
+      if (!drag) return;
+      drag = false;
+      scroller.style.cursor = 'grab';
+      if (moved) suppressClick = true;
+      moved = false;
+      try {
+        if (e && e.pointerId != null) scroller.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+    }
+
+    scroller.addEventListener('pointerup', endDrag);
+    scroller.addEventListener('pointercancel', endDrag);
+
+    scroller.addEventListener(
+      'click',
+      function (e) {
+        if (suppressClick) {
+          e.preventDefault();
+          e.stopPropagation();
+          suppressClick = false;
+        }
+      },
+      true
+    );
+  }
+
+  function run() {
+    document.querySelectorAll('.cards-scroller').forEach(initScroller);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
