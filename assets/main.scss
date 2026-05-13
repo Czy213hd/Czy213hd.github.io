@@ -559,31 +559,46 @@ body.split-landing .header-container {
 }
 
 .split-hero {
-  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: #{unquote('clamp(2rem, 6vw, 4rem)')};
-  padding-bottom: #{unquote('max(2rem, env(safe-area-inset-bottom))')};
+  padding: #{unquote('clamp(1.25rem, 4vw, 2.5rem)')};
+  padding-bottom: #{unquote('max(1.25rem, env(safe-area-inset-bottom))')};
   background-color: #0f172a;
-  background-image:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0.82) 100%),
-    var(--split-hero-image);
-  background-size: cover;
-  background-position: center 22%;
-  background-repeat: no-repeat;
+}
+
+/* One centered portrait — not a full-bleed background crop */
+.split-hero__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: #{unquote('clamp(1.25rem, 3vw, 2rem)')};
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.split-hero__photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: #{unquote('min(52vh, 520px)')};
+  max-width: #{unquote('min(82vw, 360px)')};
+  object-fit: cover;
+  object-position: center 18%;
+  aspect-ratio: 3 / 4;
+  border-radius: #{unquote('clamp(10px, 2vw, 16px)')};
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45);
 }
 
 .split-hero__inner {
-  position: relative;
-  z-index: 1;
   width: 100%;
-  max-width: 42rem;
+  max-width: 40rem;
   text-align: center;
-  margin: 0 auto;
   color: #f8fafc;
 }
 
