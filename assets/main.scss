@@ -105,7 +105,8 @@ body {
 
 // Section titles (Projects, Experience, …)
 .list-container > h3,
-.text-container > h3 {
+.text-container > h3,
+.projects-grid-container > h3 {
   font-family: 'Fraunces', Georgia, serif !important;
   font-weight: 700 !important;
   font-size: 1.45rem !important;
@@ -113,6 +114,181 @@ body {
   margin: 2.25rem 0 1rem !important;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid var(--card-border);
+}
+
+// --- Projects grid + modal (layout: projects-grid) ---
+.projects-grid-container .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.projects-grid-container .project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font: inherit;
+  color: inherit;
+}
+
+.projects-grid-container .project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+}
+
+.projects-grid-container .project-card:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.projects-grid-container .project-card__media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: var(--site-bg-accent);
+  position: relative;
+}
+
+.projects-grid-container .project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.projects-grid-container .project-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.projects-grid-container .project-card__title {
+  display: block;
+  padding: 0.85rem 1rem 1rem;
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.project-modal[hidden] {
+  display: none !important;
+}
+
+.project-modal:not([hidden]) {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
+.project-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.project-modal__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  max-height: min(85vh, 720px);
+  margin: 6vh auto 0;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+  padding: 1.5rem 1.5rem 1.25rem;
+  overflow: auto;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-radius: 8px;
+}
+
+.project-modal__close:hover {
+  background: var(--site-bg-accent);
+  color: var(--text);
+}
+
+.project-modal__title {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  margin: 0 2.25rem 0.75rem 0 !important;
+  padding-right: 0.5rem;
+  color: var(--text);
+}
+
+.project-modal__content {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.project-modal__content .project-modal-subtitle {
+  color: var(--text);
+  margin: 0 0 0.35rem;
+}
+
+.project-modal__content .project-modal-caption {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.project-modal__content .project-modal-quote {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  font-style: italic;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.project-modal__content .project-modal-description {
+  margin-bottom: 1rem;
+}
+
+.project-modal__content .project-modal-link {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .project-modal__panel {
+    margin: 10vh 0.75rem 0;
+    max-height: 82vh;
+  }
 }
 
 // Entry rows → soft cards (skip education rows: inner .education-card is the card)

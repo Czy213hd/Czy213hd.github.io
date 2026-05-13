@@ -46,11 +46,11 @@ about_content: |
 
 content:
   - title: Projects
-    layout: list
+    layout: projects-grid
     content:
-      - layout: left
-        title: Failure-aware diffusion for robotic manipulation
-        link: intl.zju.edu.cn
+      # Card shows title + image only. Click opens modal with detail. Add image: images/your.jpg when ready.
+      - title: Failure-aware diffusion for robotic manipulation
+        image: ""
         sub_title: Physical Intelligent Lab, ZJU–UIUC · Undergraduate research
         caption: Feb 2026 – Present
         quote: >
@@ -59,10 +59,10 @@ content:
           - Deployed the ARX-L5 arm, collected multi-modal teleoperation data, and iterated on training pipelines.
           - Established a bottle-capping baseline with <mark>ACT</mark> for imitation from expert demos.
           - Built a <mark>diffusion</mark>-based policy on mixed success and failure trials to raise success rate.
-
-      - layout: left
-        title: Reinforcement learning for quadruped locomotion (Jueying-Lite3)
         link: intl.zju.edu.cn
+
+      - title: Reinforcement learning for quadruped locomotion (Jueying-Lite3)
+        image: ""
         sub_title: Physical Intelligent Lab, ZJU–UIUC · Undergraduate research
         caption: Apr 2026 – Present
         quote: >
@@ -71,10 +71,10 @@ content:
           - Trained a <mark>PPO</mark> policy for the Jueying-Lite3 quadruped in the <mark>MJLab</mark> framework.
           - Ran parallel training with four robots to speed up data collection and improve robustness.
           - Explored Sim2Sim / Sim2Real, reward shaping, and domain randomization for deployment.
+        link: intl.zju.edu.cn
 
-      - layout: left
-        title: UAV facade crack detection and inspection path planning
-        link: zju.edu.cn
+      - title: UAV facade crack detection and inspection path planning
+        image: ""
         sub_title: Summer research, ZJU · Advisor Prof. Jiangpeng Shu
         caption: Jun 2024 – Sep 2024
         quote: >
@@ -83,10 +83,10 @@ content:
           - Studied UAV-based crack detection with <mark>YOLOv8</mark> on facade imagery.
           - Built and annotated 8,436 images for multi-type crack classification.
           - Implemented <mark>RRT</mark>-style planning for inspection paths along building surfaces.
-
-      - layout: left
-        title: Swarm underwater robots — structure and control
         link: zju.edu.cn
+
+      - title: Swarm underwater robots — structure and control
+        image: ""
         sub_title: Xingwen Zheng Research Group, ZJU · Advisor Prof. Xingwen Zheng
         caption: Oct 2025 – Present
         quote: >
@@ -94,6 +94,7 @@ content:
         description: |
           - Designed a modular docking mechanism for autonomous multi-robot connection.
           - Modeled the full vehicle structure in <mark>CAD</mark> (Fusion 360 / SolidWorks workflow).
+        link: zju.edu.cn
 
   - title: Experience
     layout: list
