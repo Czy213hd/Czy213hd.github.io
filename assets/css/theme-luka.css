@@ -380,29 +380,55 @@ body.theme-luka .project-card {
   line-height: 1.7;
 }
 
+/* Text first, full-width media below (no nested row flex — avoids cache / cascade issues). */
+body.theme-luka .project-card.project-card--stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+body.theme-luka .project-card.project-card--stacked .project-media {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+body.theme-luka .project-card.project-card--stacked .project-media img,
+body.theme-luka .project-card.project-card--stacked .project-media video {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
 body.theme-luka .project-row {
   display: flex;
   align-items: flex-start;
   gap: 20px;
 }
 
-/* Wide panoramas / figure strips: full-width media under text (readable on desktop). */
-body.theme-luka .project-row--media-below {
+/* Legacy: wide strip inside a row wrapper (prefer project-card--stacked). */
+body.theme-luka .project-row.project-row--media-below {
   flex-direction: column;
   align-items: stretch;
   gap: 16px;
 }
 
-body.theme-luka .project-row--media-below .project-media {
+body.theme-luka .project-row.project-row--media-below .project-media {
   width: 100%;
   max-width: none;
 }
 
-body.theme-luka .project-row--media-below .project-media img,
-body.theme-luka .project-row--media-below .project-media video {
+body.theme-luka .project-row.project-row--media-below .project-media img,
+body.theme-luka .project-row.project-row--media-below .project-media video {
   object-fit: contain;
   width: 100%;
   height: auto;
+}
+
+body.theme-luka .project-card.project-card--stacked .project-text {
+  flex: none;
+  min-width: 0;
 }
 
 body.theme-luka .project-text {
