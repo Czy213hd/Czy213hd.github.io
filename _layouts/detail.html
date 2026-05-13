@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{%- include head.html -%}
+
+<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
+
+  {%- include header.html -%}
+
+  <main class="page-content detail-main" aria-label="Content">
+    <div class="wrapper">
+      <nav class="detail-nav">
+        <a href="{{ '/' | relative_url }}" class="detail-back">&larr; Home</a>
+      </nav>
+
+      <article class="detail-article">
+        {% assign hero = page.image | default: '' | strip %}
+        {% if hero != '' %}
+          <div class="detail-hero">
+            <img src="{{ hero | relative_url }}" alt="" loading="lazy" />
+          </div>
+        {% endif %}
+
+        <header class="detail-header">
+          <h1 class="detail-title">{{ page.title | escape }}</h1>
+          {% if page.sub_title %}
+            <p class="detail-subtitle"><b>{{ page.sub_title | escape }}</b></p>
+          {% endif %}
+          {% if page.caption %}
+            <p class="detail-caption">{{ page.caption | escape }}</p>
+          {% endif %}
+          {% if page.quote %}
+            <div class="detail-quote">{{ page.quote | strip | markdownify }}</div>
+          {% endif %}
+          {% if page.link %}
+            <p class="detail-linkline">
+              {% include a.html href=page.link class="link" %}
+                {%- if page.link_text -%}{{ page.link_text | escape }}{%- else -%}{{ page.link | escape }}{%- endif -%}
+              </a>
+            </p>
+          {% endif %}
+        </header>
+
+        <div class="detail-body">
+          {{ content }}
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+  {% if site.darkmode == false %}
+    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+  {% endif %}
+</body>
+
+</html>

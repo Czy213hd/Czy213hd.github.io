@@ -46,103 +46,43 @@ about_content: |
 
 content:
   - title: Projects
-    layout: projects-grid
+    layout: cards-grid
     content:
-      # Card shows title + image only. Click opens modal with detail. Add image: images/your.jpg when ready.
+      # Card = title + image; click opens detail page (see projects/*.md). Add image when ready.
       - title: Failure-aware diffusion for robotic manipulation
         image: ""
-        sub_title: Physical Intelligent Lab, ZJU–UIUC · Undergraduate research
-        caption: Feb 2026 – Present
-        quote: >
-          Diffusion policies and ACT baselines on the ARX-L5 platform for contact-rich tasks.
-        description: |
-          - Deployed the ARX-L5 arm, collected multi-modal teleoperation data, and iterated on training pipelines.
-          - Established a bottle-capping baseline with <mark>ACT</mark> for imitation from expert demos.
-          - Built a <mark>diffusion</mark>-based policy on mixed success and failure trials to raise success rate.
-        link: intl.zju.edu.cn
+        detail_url: /projects/diffusion/
 
       - title: Reinforcement learning for quadruped locomotion (Jueying-Lite3)
         image: ""
-        sub_title: Physical Intelligent Lab, ZJU–UIUC · Undergraduate research
-        caption: Apr 2026 – Present
-        quote: >
-          PPO locomotion in MJLab with emphasis on sim-to-real transfer.
-        description: |
-          - Trained a <mark>PPO</mark> policy for the Jueying-Lite3 quadruped in the <mark>MJLab</mark> framework.
-          - Ran parallel training with four robots to speed up data collection and improve robustness.
-          - Explored Sim2Sim / Sim2Real, reward shaping, and domain randomization for deployment.
-        link: intl.zju.edu.cn
+        detail_url: /projects/quadruped/
 
       - title: UAV facade crack detection and inspection path planning
         image: ""
-        sub_title: Summer research, ZJU · Advisor Prof. Jiangpeng Shu
-        caption: Jun 2024 – Sep 2024
-        quote: >
-          UAV-based glass curtain wall inspection with YOLOv8 and RRT planning.
-        description: |
-          - Studied UAV-based crack detection with <mark>YOLOv8</mark> on facade imagery.
-          - Built and annotated 8,436 images for multi-type crack classification.
-          - Implemented <mark>RRT</mark>-style planning for inspection paths along building surfaces.
-        link: zju.edu.cn
+        detail_url: /projects/uav-facade/
 
       - title: Swarm underwater robots — structure and control
         image: ""
-        sub_title: Xingwen Zheng Research Group, ZJU · Advisor Prof. Xingwen Zheng
-        caption: Oct 2025 – Present
-        quote: >
-          Modular docking and full-body CAD for networked underwater robots.
-        description: |
-          - Designed a modular docking mechanism for autonomous multi-robot connection.
-          - Modeled the full vehicle structure in <mark>CAD</mark> (Fusion 360 / SolidWorks workflow).
-        link: zju.edu.cn
+        detail_url: /projects/swarm-underwater/
 
   - title: Experience
-    layout: list
+    layout: cards-grid
     content:
-      - layout: left
-        title: ManiSkill-ViTac Challenge 2026 (CVPR & ICRA workshop)
-        link: https://callmeray.github.io/Mani_ViTac_Challenge_2026_page
-        sub_title: Workshop organizer · Online / THU
-        caption: Jan 2026 – Present
-        quote: >
-          Robotic manipulation with π0.5 and policy fine-tuning on expert demos.
-        description: |
-          - Deployed the <mark>π0.5</mark> model stack for manipulation benchmarks.
-          - Fine-tuned foundation policies from high-quality demonstrations for single- and dual-arm tasks.
+      - title: ManiSkill-ViTac Challenge 2026 (CVPR & ICRA workshop)
+        image: ""
+        detail_url: /experience/mani-vitac/
 
-      - layout: left
-        title: ECE110 — Introduction to Electronics
-        link: zju.edu.cn
-        sub_title: Undergraduate teaching assistant · ZJU–UIUC
-        caption: Spring 2026
-        quote: >
-          Course support, assessment, and line-following robot mentoring.
-        description: |
-          - Held weekly office hours on core course material.
-          - Authored new exam questions for the departmental question bank.
-          - Mentored teams on design and debugging of the line-following robot project.
+      - title: ECE110 — Introduction to Electronics
+        image: ""
+        detail_url: /experience/ece110/
 
-      - layout: left
-        title: Illini Puller (1/4-scale tractor team)
-        link: illinois.edu
-        sub_title: CAD subteam leader · UIUC
-        caption: Aug 2025 – Nov 2025
-        quote: >
-          Student competition team focused on drivetrain, fabrication, and cost-aware design.
-        description: |
-          - Mentored newer members on CAD workflows and design reviews.
-          - Led design and fabrication of an exhaust heat-shield system (sheet metal, welding).
-          - Researched and sourced components to improve performance within budget.
+      - title: Illini Puller (1/4-scale tractor team)
+        image: ""
+        detail_url: /experience/illini-puller/
 
-      - layout: left
-        title: ZJU–UIUC Basketball Club
-        link: intl.zju.edu.cn
-        sub_title: President · Campus-wide tournaments each semester
-        caption: Jun 2024 – Present
-        quote: >
-          Student leadership for sports programming and event operations.
-        description: |
-          - Organized semester basketball tournaments and coordinated volunteers, venues, and schedules.
+      - title: ZJU–UIUC Basketball Club
+        image: ""
+        detail_url: /experience/basketball-club/
 
   - title: Education
     layout: list

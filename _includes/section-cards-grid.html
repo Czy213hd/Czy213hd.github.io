@@ -1,0 +1,23 @@
+{% comment %}
+  Card grid: image + title only; each card links to detail_url (full site path, e.g. /projects/slug/).
+  Used for Projects and Experience when layout: cards-grid.
+{% endcomment %}
+
+<div class="cards-grid project-grid" role="list">
+  {% for item in include.content %}
+    {% assign img = item.image | default: '' | strip %}
+    {% assign url = item.detail_url | default: '' | strip %}
+    {% if url != '' %}
+    <a href="{{ url | relative_url }}" class="project-card" role="listitem">
+      <span class="project-card__media">
+        {% if img != '' %}
+          <img src="{{ img | relative_url }}" alt="" loading="lazy" />
+        {% else %}
+          <span class="project-card__placeholder" aria-hidden="true">Photo</span>
+        {% endif %}
+      </span>
+      <span class="project-card__title">{{ item.title | escape }}</span>
+    </a>
+    {% endif %}
+  {% endfor %}
+</div>
