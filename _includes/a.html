@@ -1,8 +1,0 @@
-{% comment %}
-  Overrides remote theme: bare hosts get // prefix; http(s) and mailto pass through;
-  paths starting with / use relative_url (fixes ///assets/... when href was /assets/...).
-{% endcomment %}
-{% assign href = include.href | strip %}
-{% assign protocol = href | slice: 0, 4 %}
-{% assign c0 = href | slice: 0, 1 %}
-<a href="{% if href contains 'mailto:' %}{{ href }}{% elsif c0 == '/' %}{{ href | relative_url }}{% elsif protocol == 'http' %}{{ href }}{% else %}//{{ href }}{% endif %}" target="_blank" rel="noopener noreferrer" class="{{ include.class }}">

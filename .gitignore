@@ -1,7 +1,9 @@
 .DS_Store
-*.gem
-.bundle
-.sass-cache
-_site
-Gemfile.lock
-*.code-workspace
+Thumbs.db
+
+# Local editor files
+.idea/
+.vscode/
+
+# macOS metadata
+._*
