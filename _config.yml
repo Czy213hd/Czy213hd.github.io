@@ -12,6 +12,17 @@ email: chenzhongyu56@gmail.com
 website: github.com/Czy213hd
 website_title: Personal Web
 
+# Hero (portfolio landing — inspired by peer ZJUI portfolios)
+hero_institute: "Zhejiang University · University of Illinois Urbana-Champaign Institute"
+hero_tagline: "Mechanical engineering · Robotics & machine learning"
+hero_lead: |
+  Passionate about learning-based robotics — from hardware and control to manipulation and simulation.
+hero_stats:
+  - value: "4"
+    label: Projects
+  - value: "4"
+    label: Experience
+
 # Dark Mode (true/false/never)
 darkmode: false
 
