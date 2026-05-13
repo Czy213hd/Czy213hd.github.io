@@ -14,7 +14,7 @@ website_title: Personal Web
 
 # Split landing: full-viewport photo + minimal text; next screen = narrow contact | projects/experience
 split_landing: true
-split_hero_image: images/id-photo.png
+split_hero_image: images/photoofme.jpg
 split_hero_tagline: "Mechanical engineering · Robotics & machine learning"
 split_hero_blurb: "Interested in learning-based robotics — hardware, control, manipulation, and simulation."
 split_aside_title: "Let's connect"

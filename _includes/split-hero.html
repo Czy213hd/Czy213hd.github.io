@@ -1,12 +1,12 @@
 {% assign hero_img = site.split_hero_image | default: site.about_profile_image %}
 <section class="split-hero" aria-label="Introduction">
-  <div class="split-hero__stack">
+  {% include split-social-icons.html wrapper_class="split-hero__icons" %}
+
+  <div class="split-hero__row">
     <img
       class="split-hero__photo"
       src="{{ hero_img | relative_url }}"
-      alt="{{ site.name | escape }} — portrait"
-      width="640"
-      height="800"
+      alt="{{ site.name | escape }} — photo"
       loading="eager"
       decoding="async" />
     <div class="split-hero__inner">
