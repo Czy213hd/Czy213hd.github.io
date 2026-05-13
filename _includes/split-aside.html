@@ -1,0 +1,55 @@
+<aside class="split-aside" aria-label="Contact and links">
+  <h2 class="split-aside__title">{{ site.split_aside_title | default: "Connect" | escape }}</h2>
+
+  <ul class="split-aside__icons icons no-print">
+    {%- if site.github_username -%}
+      <li>
+        <a target="_blank" href="https://github.com/{{ site.github_username | cgi_escape | escape }}" class="button button--sacnite button--round-l">
+          <i class="fab fa-github" title="GitHub"></i>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if site.instagram_username -%}
+      <li>
+        <a target="_blank" href="https://www.instagram.com/{{ site.instagram_username | cgi_escape | escape }}" class="button button--sacnite button--round-l">
+          <i class="fab fa-instagram" title="Instagram"></i>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if site.linkedin_username -%}
+      <li>
+        <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}" class="button button--sacnite button--round-l">
+          <i class="fab fa-linkedin" title="LinkedIn"></i>
+        </a>
+      </li>
+    {%- endif -%}
+    {% for link in site.additional_links %}
+      <li>
+        {% include a.html href=link.url class="button button--sacnite button--round-l" %}
+          <i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if site.email %}
+    <p class="split-aside__block">
+      <span class="split-aside__label">{{ site.email_title | default: "Email" | escape }}</span><br />
+      <a href="mailto:{{ site.email | escape }}">{{ site.email | escape }}</a>
+    </p>
+  {% endif %}
+
+  {% if site.website %}
+    <p class="split-aside__block">
+      <span class="split-aside__label">{{ site.website_title | default: "Web" | escape }}</span><br />
+      {% include a.html href=site.website class="link" %}{{ site.website | escape }}</a>
+    </p>
+  {% endif %}
+
+  {% if site.phone %}
+    <p class="split-aside__block">
+      <span class="split-aside__label">{{ site.phone_title | default: "Phone" | escape }}</span><br />
+      {{ site.phone | escape }}
+    </p>
+  {% endif %}
+</aside>

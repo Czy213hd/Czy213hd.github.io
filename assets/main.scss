@@ -541,3 +541,224 @@ mark {
     max-height: 36px !important;
   }
 }
+
+// =============================================================================
+// Split landing: full-viewport photo + minimal copy; then contact | projects
+// (Inspired by peer portfolio rhythm, e.g. yao-xinchen.github.io)
+// =============================================================================
+
+body.split-landing .header-container {
+  display: none !important;
+}
+
+.split-landing .page-content--split {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  max-width: none !important;
+  width: 100%;
+}
+
+.split-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: #{unquote('clamp(2rem, 6vw, 4rem)')};
+  padding-bottom: #{unquote('max(2rem, env(safe-area-inset-bottom))')};
+  background-color: #0f172a;
+  background-image:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0.82) 100%),
+    var(--split-hero-image);
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+}
+
+.split-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 42rem;
+  text-align: center;
+  margin: 0 auto;
+  color: #f8fafc;
+}
+
+.split-hero__name {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: #{unquote('clamp(2.25rem, 6vw, 3.5rem)')} !important;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin: 0 0 0.5rem !important;
+  color: #fff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.split-hero__line {
+  font-size: #{unquote('clamp(1rem, 2.4vw, 1.2rem)')};
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  color: #e2e8f0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.split-hero__blurb {
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0 auto 1.25rem;
+  color: #cbd5e1;
+  max-width: 36em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.split-hero__blurb p {
+  margin: 0;
+}
+
+.split-hero__scroll {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fb923c !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid rgba(251, 146, 60, 0.45);
+  padding-bottom: 0.1rem;
+}
+
+.split-hero__scroll:hover {
+  color: #fdba74 !important;
+  border-bottom-color: #fdba74;
+}
+
+.split-work {
+  display: grid;
+  grid-template-columns: minmax(11rem, 17rem) 1fr;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1200px) {
+  .split-work {
+    grid-template-columns: minmax(12rem, 19rem) 1fr;
+  }
+}
+
+.split-aside {
+  padding: #{unquote('clamp(1.25rem, 2.5vw, 2rem)')};
+  background: #f1f5f9;
+  border-right: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+}
+
+.split-aside__title {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 1rem !important;
+  color: var(--text);
+}
+
+.split-aside .split-aside__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 !important;
+  margin: 0 0 1.25rem !important;
+  list-style: none;
+}
+
+.split-aside__block {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0 0 1rem !important;
+}
+
+.split-aside__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.split-aside__block a,
+.split-aside__block a.link {
+  color: var(--text) !important;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.split-main {
+  background: var(--card-bg);
+  min-width: 0;
+  padding: #{unquote('clamp(1rem, 2.5vw, 2.25rem)')};
+}
+
+.split-main__section {
+  margin-bottom: #{unquote('clamp(1.5rem, 3vw, 2.5rem)')};
+}
+
+.split-main__section:last-child {
+  margin-bottom: 0;
+}
+
+.split-main__section > h3 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  margin: 0 0 0.75rem !important;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--card-border);
+  color: var(--text);
+}
+
+body.split-landing .split-main .cards-scroller.h-strip {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  scroll-snap-type: none;
+  margin-top: 0.25rem;
+  padding-bottom: 0;
+}
+
+body.split-landing .split-main .h-strip__track {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem 1.15rem;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+body.split-landing .split-main a.h-strip__card {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.split-below {
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 899px) {
+  .split-work {
+    grid-template-columns: 1fr;
+  }
+
+  .split-aside {
+    position: relative;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--card-border);
+  }
+}
