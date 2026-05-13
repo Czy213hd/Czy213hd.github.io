@@ -1,26 +1,27 @@
 {% comment %}
-  Single horizontal row: scroll / swipe / drag. Cards link to detail_url.
+  Single horizontal row: overflow-x scroll / touch swipe / pointer drag.
+  Uses unique class names so theme CSS cannot override with display:grid.
 {% endcomment %}
 
 <div
-  class="cards-scroller"
+  class="cards-scroller h-strip"
   tabindex="0"
   role="region"
   aria-label="{{ include.aria_label | default: 'Items' }} — scroll sideways to see more">
-  <div class="cards-grid project-grid" role="list">
+  <div class="h-strip__track" role="list">
     {% for item in include.content %}
       {% assign img = item.image | default: '' | strip %}
       {% assign url = item.detail_url | default: '' | strip %}
       {% if url != '' %}
-      <a href="{{ url | relative_url }}" class="project-card" role="listitem">
-        <span class="project-card__media">
+      <a href="{{ url | relative_url }}" class="h-strip__card" role="listitem">
+        <span class="h-strip__media">
           {% if img != '' %}
             <img src="{{ img | relative_url }}" alt="" loading="lazy" />
           {% else %}
-            <span class="project-card__placeholder" aria-hidden="true">Photo</span>
+            <span class="h-strip__placeholder" aria-hidden="true">Photo</span>
           {% endif %}
         </span>
-        <span class="project-card__title">{{ item.title | escape }}</span>
+        <span class="h-strip__title">{{ item.title | escape }}</span>
       </a>
       {% endif %}
     {% endfor %}

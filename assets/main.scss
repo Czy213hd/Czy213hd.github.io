@@ -18,6 +18,8 @@
   --accent: #c2410c;
   --accent-soft: rgba(194, 65, 12, 0.12);
   --radius: 14px;
+  /* Wider “horizontal” page feel (was 920px) */
+  --content-max: min(1180px, calc(100vw - 28px));
 }
 
 html {
@@ -36,14 +38,13 @@ body {
 }
 
 .wrapper {
-  max-width: 920px;
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 0 clamp(12px, 2vw, 20px) 3rem;
 }
 
-// Bootstrap 3 `.container` uses fixed widths (750/970/1170px). Our `.wrapper` is 920px — the
-// child `.container` then overflows the wrapper and looks shifted / “crooked”. Force main
-// sections to respect the wrapper width.
+// Bootstrap 3 `.container` uses fixed widths (750/970/1170px). Our `.wrapper` caps width — the
+// child `.container` then overflows and looks shifted. Force main sections to respect the wrapper.
 .wrapper > .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -51,9 +52,9 @@ body {
   margin-right: auto;
 }
 
-// Keep the same content width as the body so the header bar lines up with About / Projects.
+// Header aligns with main column
 .container.header-container {
-  max-width: 920px !important;
+  max-width: var(--content-max) !important;
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -135,36 +136,45 @@ body {
   border-bottom: 2px solid var(--card-border);
 }
 
-// --- Card strip (layout: cards-grid) — one row, horizontal scroll / swipe / drag ---
-.cards-grid-container .cards-scroller {
-  overflow-x: auto;
-  overflow-y: hidden;
+// Projects / Experience: do not clip the horizontal strip
+.wrapper > .container.cards-grid-container {
+  overflow-x: visible !important;
+}
+
+// --- Horizontal card strip (layout: cards-grid) — one row only, scroll sideways ---
+.cards-grid-container .cards-scroller.h-strip {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
   margin-top: 0.5rem;
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.5rem;
   scrollbar-width: thin;
 }
 
-.cards-grid-container .cards-scroller .cards-grid.project-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+.cards-grid-container .h-strip__track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch;
   gap: 1.1rem;
-  width: max-content;
-  min-width: 100%;
-  padding: 2px 2px 8px;
+  width: max-content !important;
+  min-width: min(100%, 1px);
+  padding: 2px 2px 10px;
   box-sizing: border-box;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
 }
 
-.cards-grid-container .cards-scroller a.project-card {
-  display: flex;
+.cards-grid-container a.h-strip__card {
+  display: flex !important;
   flex-direction: column;
   align-items: stretch;
   text-align: left;
-  flex: 0 0 auto;
-  width: min(240px, 82vw);
+  flex: 0 0 auto !important;
+  width: min(260px, 78vw) !important;
+  max-width: none !important;
   scroll-snap-align: start;
   margin: 0;
   padding: 0;
@@ -172,7 +182,7 @@ body {
   border-radius: var(--radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
-  cursor: pointer;
+  cursor: grab;
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   font: inherit;
@@ -180,31 +190,31 @@ body {
   text-decoration: none;
 }
 
-.cards-grid-container .cards-scroller a.project-card:hover {
+.cards-grid-container a.h-strip__card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
 }
 
-.cards-grid-container .cards-scroller a.project-card:focus {
+.cards-grid-container a.h-strip__card:focus {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.cards-grid-container .project-card__media {
+.cards-grid-container .h-strip__media {
   display: block;
   aspect-ratio: 16 / 10;
   background: var(--site-bg-accent);
   position: relative;
 }
 
-.cards-grid-container .project-card__media img {
+.cards-grid-container .h-strip__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.cards-grid-container .project-card__placeholder {
+.cards-grid-container .h-strip__placeholder {
   position: absolute;
   inset: 0;
   display: flex;
@@ -217,7 +227,7 @@ body {
   color: var(--text-muted);
 }
 
-.cards-grid-container .project-card__title {
+.cards-grid-container .h-strip__title {
   display: block;
   padding: 0.85rem 1rem 1rem;
   font-family: 'Fraunces', Georgia, serif !important;
@@ -250,7 +260,7 @@ body {
   box-shadow: var(--card-shadow);
   padding: 0;
   overflow: hidden;
-  max-width: 720px;
+  max-width: min(900px, var(--content-max));
   margin: 0 auto 2rem;
 }
 
