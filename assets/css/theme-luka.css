@@ -232,12 +232,12 @@ body.theme-luka .social-icons a:hover {
 
 body.theme-luka .visitor-card {
   margin: 40px auto 0;
-  width: 240px;
+  width: min(100%, 280px);
   padding: 18px 16px;
   border: 1px dashed var(--luka-border);
   border-radius: 14px;
   color: var(--luka-secondary);
-  text-align: left;
+  text-align: center;
 }
 
 body.theme-luka .visitor-card-title {
@@ -247,11 +247,13 @@ body.theme-luka .visitor-card-title {
   color: var(--luka-accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-align: left;
 }
 
 body.theme-luka .visitor-card-body {
   font-size: 13px;
   line-height: 1.6;
+  overflow-x: auto;
 }
 
 body.theme-luka .content {
