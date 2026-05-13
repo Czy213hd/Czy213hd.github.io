@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" role="img" aria-label="Project image placeholder">
+  <rect width="100%" height="100%" fill="#e8e4df"/>
+  <rect x="24" y="24" width="432" height="272" rx="8" fill="#f5f2ed" stroke="#c2714f" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="240" y="168" text-anchor="middle" fill="#6b6560" font-family="system-ui,sans-serif" font-size="15">Replace with your project photo</text>
+</svg>
