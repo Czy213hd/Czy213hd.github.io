@@ -41,6 +41,25 @@ body {
   padding: 0 1.25rem 3rem;
 }
 
+// Bootstrap 3 `.container` uses fixed widths (750/970/1170px). Our `.wrapper` is 920px — the
+// child `.container` then overflows the wrapper and looks shifted / “crooked”. Force main
+// sections to respect the wrapper width.
+.wrapper > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Keep the same content width as the body so the header bar lines up with About / Projects.
+.container.header-container {
+  max-width: 920px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
 .page-content {
   padding-top: 0.5rem !important;
 }
