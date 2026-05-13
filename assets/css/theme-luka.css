@@ -420,7 +420,8 @@ body.theme-luka .project-media {
   margin: 0;
 }
 
-body.theme-luka .project-media img {
+body.theme-luka .project-media img,
+body.theme-luka .project-media video {
   display: block;
   width: 100%;
   height: auto;
@@ -429,7 +430,23 @@ body.theme-luka .project-media img {
   object-fit: cover;
 }
 
-[data-theme="dark"] body.theme-luka .project-media img {
+body.theme-luka .project-media video {
+  background: #000;
+}
+
+body.theme-luka .project-media iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] body.theme-luka .project-media img,
+[data-theme="dark"] body.theme-luka .project-media video,
+[data-theme="dark"] body.theme-luka .project-media iframe {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
