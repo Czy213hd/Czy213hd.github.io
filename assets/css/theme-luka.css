@@ -380,6 +380,10 @@ body.theme-luka .project-card {
   line-height: 1.7;
 }
 
+body.theme-luka .section-body > .project-card + .project-card {
+  margin-top: 28px;
+}
+
 /* Text first, full-width media below (no nested row flex — avoids cache / cascade issues). */
 body.theme-luka .project-card.project-card--stacked {
   display: flex;
