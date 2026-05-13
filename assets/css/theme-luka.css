@@ -386,6 +386,25 @@ body.theme-luka .project-row {
   gap: 20px;
 }
 
+/* Wide panoramas / figure strips: full-width media under text (readable on desktop). */
+body.theme-luka .project-row--media-below {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+body.theme-luka .project-row--media-below .project-media {
+  width: 100%;
+  max-width: none;
+}
+
+body.theme-luka .project-row--media-below .project-media img,
+body.theme-luka .project-row--media-below .project-media video {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
 body.theme-luka .project-text {
   flex: 1;
   min-width: 0;
@@ -589,19 +608,19 @@ body.theme-luka strong {
     height: 44px;
   }
 
-  body.theme-luka .project-row {
+  body.theme-luka .project-row:not(.project-row--media-below) {
     flex-direction: column;
     gap: 14px;
   }
 
-  body.theme-luka .project-media {
+  body.theme-luka .project-row:not(.project-row--media-below) .project-media {
     width: 100%;
     max-width: 320px;
     align-self: center;
     order: 1;
   }
 
-  body.theme-luka .project-text {
+  body.theme-luka .project-row:not(.project-row--media-below) .project-text {
     order: 0;
   }
 
