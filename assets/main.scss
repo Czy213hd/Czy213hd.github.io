@@ -18,8 +18,8 @@
   --accent: #c2410c;
   --accent-soft: rgba(194, 65, 12, 0.12);
   --radius: 14px;
-  /* Wider “horizontal” page feel (was 920px) */
-  --content-max: min(1180px, calc(100vw - 28px));
+  /* Pass through as literal CSS min() — Sass’s own min() would error on mixed units */
+  --content-max: #{unquote('min(1180px, calc(100vw - 28px))')};
 }
 
 html {
@@ -160,7 +160,7 @@ body {
   align-items: stretch;
   gap: 1.1rem;
   width: max-content !important;
-  min-width: min(100%, 1px);
+  min-width: #{unquote('min(100%, 1px)')};
   padding: 2px 2px 10px;
   box-sizing: border-box;
   grid-template-columns: none !important;
@@ -173,7 +173,7 @@ body {
   align-items: stretch;
   text-align: left;
   flex: 0 0 auto !important;
-  width: min(260px, 78vw) !important;
+  width: #{unquote('min(260px, 78vw)')} !important;
   max-width: none !important;
   scroll-snap-align: start;
   margin: 0;
@@ -260,7 +260,7 @@ body {
   box-shadow: var(--card-shadow);
   padding: 0;
   overflow: hidden;
-  max-width: min(900px, var(--content-max));
+  max-width: #{unquote('min(900px, var(--content-max))')};
   margin: 0 auto 2rem;
 }
 
