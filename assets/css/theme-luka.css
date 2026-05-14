@@ -392,14 +392,59 @@ body.theme-luka .project-card.project-card--stacked {
   gap: 16px;
 }
 
-body.theme-luka .project-card.project-card--stacked .project-media {
+body.theme-luka .project-card.project-card--stacked .project-media-fold {
+  width: 100%;
+  border: 1px solid var(--luka-footer-border);
+  border-radius: 10px;
+  background: rgba(194, 113, 79, 0.06);
+  overflow: hidden;
+}
+
+[data-theme="dark"] body.theme-luka .project-card.project-card--stacked .project-media-fold {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+body.theme-luka .project-media-fold > summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--luka-accent);
+  list-style: none;
+  user-select: none;
+}
+
+body.theme-luka .project-media-fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+body.theme-luka .project-media-fold > summary::marker {
+  content: "";
+}
+
+body.theme-luka .project-media-fold > summary::before {
+  content: "+ ";
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+body.theme-luka .project-media-fold[open] > summary::before {
+  content: "− ";
+}
+
+body.theme-luka .project-media-fold > summary:hover {
+  filter: brightness(1.08);
+}
+
+body.theme-luka .project-card.project-card--stacked .project-media-fold .project-media {
   width: 100%;
   max-width: none;
   margin: 0;
+  padding: 0 12px 12px;
 }
 
-body.theme-luka .project-card.project-card--stacked .project-media img,
-body.theme-luka .project-card.project-card--stacked .project-media video {
+body.theme-luka .project-card.project-card--stacked .project-media-fold .project-media img,
+body.theme-luka .project-card.project-card--stacked .project-media-fold .project-media video {
   object-fit: contain;
   width: 100%;
   height: auto;
