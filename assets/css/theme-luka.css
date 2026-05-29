@@ -270,6 +270,27 @@ body.theme-luka .visitor-map-link img {
   border-radius: 6px;
 }
 
+body.theme-luka .visitor-stats {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--luka-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+body.theme-luka .visitor-stats-sep {
+  margin: 0 6px;
+  opacity: 0.5;
+}
+
+body.theme-luka .visitor-map-hint {
+  margin: 6px 0 0;
+  font-size: 11px;
+}
+
+body.theme-luka .visitor-map-hint a {
+  font-weight: 500;
+}
+
 body.theme-luka .content {
   flex: 1;
   min-width: 0;

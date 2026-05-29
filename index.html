@@ -16,7 +16,7 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260506i">
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260506j">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
@@ -52,10 +52,16 @@
         <div class="visitor-card">
           <div class="visitor-card-title">Visitor Map</div>
           <div class="visitor-card-body">
-            <!-- Static map always visible; JS widget often blocked (network / ad blockers). -->
-            <a class="visitor-map-link" href="https://clustrmaps.com/site/1c9zo" title="Visitor map on ClustrMaps" target="_blank" rel="noopener noreferrer">
-              <img src="https://www.clustrmaps.com/map_v2.png?d=sUwa-HQCs7Vl_YDP_KE1PAo8LnIvOnjCO_mjSBER0fM&amp;cl=ffffff" width="250" height="180" alt="Visitor map" loading="lazy" decoding="async">
+            <!-- ClustrMaps CDN is often blocked; local preview + busuanzi stats + link to live map. -->
+            <a class="visitor-map-link" href="https://clustrmaps.com/site/1c9zo" title="Open live visitor map on ClustrMaps" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/visitor-map.svg" width="250" height="130" alt="Visitor map preview">
             </a>
+            <p class="visitor-stats" id="busuanzi_container">
+              <span id="busuanzi_container_site_uv">Visitors <span id="busuanzi_value_site_uv">—</span></span>
+              <span class="visitor-stats-sep">·</span>
+              <span id="busuanzi_container_site_pv">Views <span id="busuanzi_value_site_pv">—</span></span>
+            </p>
+            <p class="visitor-map-hint"><a href="https://clustrmaps.com/site/1c9zo" target="_blank" rel="noopener noreferrer">Open live map on ClustrMaps</a></p>
           </div>
         </div>
       </div>
@@ -292,6 +298,7 @@
       }
     })();
   </script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <!-- Temporarily hidden: project media fold script
   <script>
     document.querySelectorAll('.project-media-fold').forEach(function(d) {
