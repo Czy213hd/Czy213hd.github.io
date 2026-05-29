@@ -254,41 +254,6 @@ body.theme-luka .visitor-card-body {
   font-size: 13px;
   line-height: 1.6;
   overflow-x: auto;
-  min-height: 120px;
-}
-
-body.theme-luka .visitor-map-link {
-  display: block;
-  line-height: 0;
-}
-
-body.theme-luka .visitor-map-link img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 6px;
-}
-
-body.theme-luka .visitor-stats {
-  margin: 10px 0 0;
-  font-size: 12px;
-  color: var(--luka-secondary);
-  font-variant-numeric: tabular-nums;
-}
-
-body.theme-luka .visitor-stats-sep {
-  margin: 0 6px;
-  opacity: 0.5;
-}
-
-body.theme-luka .visitor-map-hint {
-  margin: 6px 0 0;
-  font-size: 11px;
-}
-
-body.theme-luka .visitor-map-hint a {
-  font-weight: 500;
 }
 
 body.theme-luka .content {
