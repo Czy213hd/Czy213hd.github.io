@@ -254,6 +254,20 @@ body.theme-luka .visitor-card-body {
   font-size: 13px;
   line-height: 1.6;
   overflow-x: auto;
+  min-height: 120px;
+}
+
+body.theme-luka .visitor-map-link {
+  display: block;
+  line-height: 0;
+}
+
+body.theme-luka .visitor-map-link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
 }
 
 body.theme-luka .content {
