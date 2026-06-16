@@ -230,32 +230,6 @@ body.theme-luka .social-icons a:hover {
   transform: translateY(-2px);
 }
 
-body.theme-luka .visitor-card {
-  margin: 40px auto 0;
-  width: min(100%, 280px);
-  padding: 18px 16px;
-  border: 1px dashed var(--luka-border);
-  border-radius: 14px;
-  color: var(--luka-secondary);
-  text-align: center;
-}
-
-body.theme-luka .visitor-card-title {
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--luka-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-align: left;
-}
-
-body.theme-luka .visitor-card-body {
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-x: auto;
-}
-
 body.theme-luka .content {
   flex: 1;
   min-width: 0;
@@ -699,10 +673,6 @@ body.theme-luka strong {
     order: 0;
   }
 
-  body.theme-luka .visitor-card {
-    width: 100%;
-    max-width: 280px;
-  }
 }
 
 @media (max-width: 480px) {
