@@ -121,6 +121,10 @@ body.theme-luka .nav-left a {
   font-weight: 600;
 }
 
+body.theme-luka .nav-left a.active {
+  color: var(--luka-accent);
+}
+
 body.theme-luka .theme-toggle {
   border: none;
   background: transparent;
@@ -241,6 +245,17 @@ body.theme-luka .content {
   min-width: 0;
   margin-left: 320px;
   padding: 120px 40px 80px 60px;
+}
+
+body.theme-luka.gallery-page .wrapper {
+  display: block;
+}
+
+body.theme-luka.gallery-page .content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
 }
 
 body.theme-luka .section {
