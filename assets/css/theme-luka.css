@@ -109,6 +109,12 @@ body.theme-luka .nav-container {
   justify-content: space-between;
 }
 
+body.theme-luka .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 body.theme-luka .nav-left a {
   color: var(--luka-text);
   font-size: 18px;
@@ -347,6 +353,39 @@ body.theme-luka .exp-period {
   font-size: 13px;
   color: var(--luka-accent);
   font-weight: 500;
+}
+
+body.theme-luka .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.theme-luka .gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--luka-footer-border);
+  border-radius: 8px;
+  background: rgba(194, 113, 79, 0.04);
+}
+
+body.theme-luka .gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--luka-social-bg);
+}
+
+body.theme-luka .gallery-item figcaption {
+  padding: 8px 10px;
+  color: var(--luka-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] body.theme-luka .gallery-item {
+  background: rgba(0, 0, 0, 0.18);
 }
 
 body.theme-luka .project-card {
@@ -655,6 +694,10 @@ body.theme-luka strong {
   body.theme-luka .institution-logo {
     width: 44px;
     height: 44px;
+  }
+
+  body.theme-luka .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
   body.theme-luka .project-row:not(.project-row--media-below) {
