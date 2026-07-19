@@ -377,7 +377,7 @@ body.theme-luka .gallery-grid {
 }
 
 body.theme-luka .gallery-masonry {
-  column-count: 3;
+  columns: 280px 3;
   column-gap: 18px;
 }
 
@@ -711,9 +711,6 @@ body.theme-luka strong {
     border-top: none;
   }
 
-  body.theme-luka .gallery-masonry {
-    column-count: 2;
-  }
 }
 
 @media (max-width: 640px) {
