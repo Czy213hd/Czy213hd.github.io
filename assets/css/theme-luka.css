@@ -86,6 +86,11 @@ body.theme-luka a:hover {
   filter: brightness(1.15);
 }
 
+body.theme-luka .text-strong-link {
+  color: var(--luka-text);
+  font-weight: 700;
+}
+
 body.theme-luka .top-nav {
   position: fixed;
   top: 0;
