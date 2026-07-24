@@ -279,8 +279,8 @@ body.theme-luka .section-title {
   display: inline-block;
   margin: 0 0 18px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--luka-accent);
-  color: var(--luka-accent);
+  border-bottom: 2px solid var(--luka-text);
+  color: var(--luka-text);
   font-size: 19px;
   font-weight: 600;
 }
