@@ -279,7 +279,7 @@ body.theme-luka .section-title {
   display: inline-block;
   margin: 0 0 18px;
   padding-bottom: 10px;
-  border-bottom: 3px solid var(--luka-text);
+  border-bottom: 4px solid var(--luka-text);
   color: var(--luka-text);
   font-size: 19px;
   font-weight: 600;
