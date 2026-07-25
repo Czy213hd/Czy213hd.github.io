@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260725-email-scramble">
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260725-email-unscramble-link">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
@@ -45,7 +45,8 @@
 
         <h1 class="site-name">Zhongyu "Austin" Chen</h1>
         <p class="site-email">
-          <button type="button" class="email-unscramble" id="emailUnscramble" data-user="chenzhongyu56" data-domain="gmail.com">moc.liamg@65uygnohznehc</button>
+          <span id="emailText">chenzhongyu56@gmail.com</span>
+          <button type="button" class="email-unscramble" id="emailUnscramble" data-user="chenzhongyu56" data-domain="gmail.com">unscramble</button>
         </p>
 
         <div class="social-icons">
@@ -255,7 +256,7 @@
           const link = document.createElement('a');
           link.href = `mailto:${email}`;
           link.textContent = email;
-          emailUnscramble.replaceWith(link);
+          emailUnscramble.parentElement.replaceChildren(link);
         });
       }
 

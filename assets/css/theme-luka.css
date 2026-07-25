@@ -218,9 +218,10 @@ body.theme-luka .email-unscramble {
   padding: 0;
   border: 0;
   background: transparent;
-  color: inherit;
+  color: #2563eb;
   font: inherit;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 body.theme-luka .site-email a:hover {
@@ -229,7 +230,7 @@ body.theme-luka .site-email a:hover {
 }
 
 body.theme-luka .email-unscramble:hover {
-  color: var(--luka-accent);
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
