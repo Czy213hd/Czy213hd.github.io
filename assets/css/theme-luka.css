@@ -304,6 +304,28 @@ body.theme-luka .section-body p {
   margin: 0 0 14px;
 }
 
+body.theme-luka .news-list {
+  margin: 0;
+  padding-left: 28px;
+  color: var(--luka-text);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+body.theme-luka .news-list li {
+  padding-left: 6px;
+}
+
+body.theme-luka .news-list a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+body.theme-luka .news-list a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
 body.theme-luka .card {
   background: transparent;
   padding: 0;
