@@ -326,6 +326,23 @@ body.theme-luka .news-list a:hover {
   text-decoration: underline;
 }
 
+body.theme-luka .plain-list {
+  margin: 0;
+  padding-left: 28px;
+  color: var(--luka-text);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+body.theme-luka .plain-list li {
+  padding-left: 6px;
+}
+
+body.theme-luka .plain-list ul {
+  margin: 2px 0 0;
+  padding-left: 32px;
+}
+
 body.theme-luka .card {
   background: transparent;
   padding: 0;
