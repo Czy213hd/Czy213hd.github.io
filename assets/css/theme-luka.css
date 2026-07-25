@@ -214,7 +214,21 @@ body.theme-luka .site-email a {
   text-decoration: none;
 }
 
+body.theme-luka .email-unscramble {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
 body.theme-luka .site-email a:hover {
+  color: var(--luka-accent);
+  text-decoration: underline;
+}
+
+body.theme-luka .email-unscramble:hover {
   color: var(--luka-accent);
   text-decoration: underline;
 }

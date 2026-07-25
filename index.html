@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260725-title-line-4px">
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260725-email-scramble">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
@@ -44,7 +44,9 @@
         </a>
 
         <h1 class="site-name">Zhongyu "Austin" Chen</h1>
-        <p class="site-email"><a href="mailto:chenzhongyu56@gmail.com">chenzhongyu56@gmail.com</a></p>
+        <p class="site-email">
+          <button type="button" class="email-unscramble" id="emailUnscramble" data-user="chenzhongyu56" data-domain="gmail.com">moc.liamg@65uygnohznehc</button>
+        </p>
 
         <div class="social-icons">
           <a href="mailto:chenzhongyu56@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -245,6 +247,17 @@
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         setTheme(!isDark);
       });
+
+      const emailUnscramble = document.getElementById('emailUnscramble');
+      if (emailUnscramble) {
+        emailUnscramble.addEventListener('click', function() {
+          const email = `${emailUnscramble.dataset.user}@${emailUnscramble.dataset.domain}`;
+          const link = document.createElement('a');
+          link.href = `mailto:${email}`;
+          link.textContent = email;
+          emailUnscramble.replaceWith(link);
+        });
+      }
 
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(function(entries) {
