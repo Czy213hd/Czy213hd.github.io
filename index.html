@@ -44,13 +44,13 @@
         </a>
 
         <h1 class="site-name">Zhongyu "Austin" Chen</h1>
-        <p class="site-email">
-          <span id="emailText">chenzhongyu56@gmail.com</span>
-          <button type="button" class="email-unscramble" id="emailUnscramble" data-user="chenzhongyu56" data-domain="gmail.com">unscramble</button>
+        <p class="site-email" id="emailContact">
+          <span id="emailText" aria-label="Scrambled email address">moc.liamg [ta] 65uygnohznehc</span>
+          <button type="button" class="email-unscramble" id="emailUnscramble">unscramble</button>
         </p>
 
         <div class="social-icons">
-          <a href="mailto:chenzhongyu56@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#emailContact" id="emailIcon" title="Reveal email" aria-label="Reveal email address"><i class="fa-solid fa-envelope"></i></a>
           <a href="https://github.com/Czy213hd" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           <a href="https://www.linkedin.com/in/chen-zhongyu-814774395/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
           <a href="https://www.instagram.com/austin_chen/" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -275,13 +275,36 @@
       });
 
       const emailUnscramble = document.getElementById('emailUnscramble');
-      if (emailUnscramble) {
-        emailUnscramble.addEventListener('click', function() {
-          const email = `${emailUnscramble.dataset.user}@${emailUnscramble.dataset.domain}`;
+      const emailIcon = document.getElementById('emailIcon');
+      let revealedEmail = null;
+
+      function revealEmail() {
+        if (!revealedEmail) {
+          const encodedEmail = [99, 104, 101, 110, 122, 104, 111, 110, 103, 121, 117, 53, 54, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109];
+          const email = String.fromCharCode(...encodedEmail);
           const link = document.createElement('a');
           link.href = `mailto:${email}`;
           link.textContent = email;
           emailUnscramble.parentElement.replaceChildren(link);
+          emailIcon.href = link.href;
+          emailIcon.title = 'Email';
+          emailIcon.setAttribute('aria-label', 'Send email');
+          revealedEmail = email;
+        }
+
+        return revealedEmail;
+      }
+
+      if (emailUnscramble) {
+        emailUnscramble.addEventListener('click', revealEmail);
+      }
+
+      if (emailIcon) {
+        emailIcon.addEventListener('click', function(event) {
+          if (!revealedEmail) {
+            event.preventDefault();
+            revealEmail();
+          }
         });
       }
 
