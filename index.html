@@ -45,7 +45,7 @@
 
         <h1 class="site-name">Zhongyu "Austin" Chen</h1>
         <p class="site-email" id="emailContact">
-          <span id="emailText" aria-label="Scrambled email address">moc.liamg [ta] 65uygnohznehc</span>
+          <span id="emailText" aria-label="Scrambled email address">email protected</span>
           <button type="button" class="email-unscramble" id="emailUnscramble">unscramble</button>
         </p>
 
@@ -277,12 +277,33 @@
 
       const emailUnscramble = document.getElementById('emailUnscramble');
       const emailIcon = document.getElementById('emailIcon');
+      const emailText = document.getElementById('emailText');
+      const emailKey = 73;
+      const encodedEmail = [42, 33, 44, 39, 51, 33, 38, 39, 46, 48, 60, 124, 127, 9, 46, 36, 40, 32, 37, 103, 42, 38, 36];
       let revealedEmail = null;
+
+      function decodeEmail() {
+        return String.fromCharCode(...encodedEmail.map(function(value) {
+          return value ^ emailKey;
+        }));
+      }
+
+      function scrambleEmail() {
+        const characters = Array.from(decodeEmail());
+        const randomValues = new Uint32Array(characters.length);
+        crypto.getRandomValues(randomValues);
+
+        for (let index = characters.length - 1; index > 0; index -= 1) {
+          const swapIndex = randomValues[index] % (index + 1);
+          [characters[index], characters[swapIndex]] = [characters[swapIndex], characters[index]];
+        }
+
+        emailText.textContent = characters.join('');
+      }
 
       function revealEmail() {
         if (!revealedEmail) {
-          const encodedEmail = [99, 104, 101, 110, 122, 104, 111, 110, 103, 121, 117, 53, 54, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109];
-          const email = String.fromCharCode(...encodedEmail);
+          const email = decodeEmail();
           const link = document.createElement('a');
           link.href = `mailto:${email}`;
           link.textContent = email;
@@ -297,6 +318,7 @@
       }
 
       if (emailUnscramble) {
+        scrambleEmail();
         emailUnscramble.addEventListener('click', revealEmail);
       }
 
