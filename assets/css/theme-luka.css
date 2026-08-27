@@ -316,6 +316,27 @@ body.theme-luka .news-list li {
   padding-left: 6px;
 }
 
+body.theme-luka .news-list.is-collapsed li:nth-child(n + 6) {
+  display: none;
+}
+
+body.theme-luka .news-toggle {
+  margin: 8px 0 0 28px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--luka-accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body.theme-luka .news-toggle:hover {
+  filter: brightness(1.12);
+}
+
 body.theme-luka .news-list a {
   color: #2563eb;
   text-decoration: none;

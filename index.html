@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260725-miscellanea">
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260827-news-fold">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
@@ -72,7 +72,7 @@
       <div class="section" id="news">
         <h2 class="section-title">News</h2>
         <div class="section-body">
-          <ul class="news-list">
+          <ul class="news-list is-collapsed" id="newsList">
             <li>[08/2026] Joined <a href="https://hawkrobo.com" target="_blank" rel="noopener noreferrer">HawkRobo</a> as a short-term research intern.</li>
             <li>[07/2026] Underwater robot patent application was approved.</li>
             <li>[06/2026] Joined <a href="https://rvclab.github.io" target="_blank" rel="noopener noreferrer">RVC Lab</a> under the supervision of <a href="https://scholar.google.com/citations?hl=en&amp;user=Ahu5mg4AAAAJ" target="_blank" rel="noopener noreferrer">Prof. Liangjing Yang</a>.</li>
@@ -80,6 +80,7 @@
             <li>[03/2026] Joined the <a href="https://physicalintelligence-lab.github.io/" target="_blank" rel="noopener noreferrer">Physical Intelligence Lab</a> under the supervision of <a href="https://scholar.google.com/citations?user=sFTLO0EAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Prof. Hua Chen</a>.</li>
             <li>[09/2023] Started the dual-degree program at ZJU-UIUC Institute.</li>
           </ul>
+          <button class="news-toggle" id="newsToggle" type="button" aria-expanded="false" aria-controls="newsList">Show more</button>
         </div>
       </div>
 
@@ -344,6 +345,22 @@
             revealEmail();
           }
         });
+      }
+
+      const newsList = document.getElementById('newsList');
+      const newsToggle = document.getElementById('newsToggle');
+
+      if (newsList && newsToggle) {
+        if (newsList.children.length <= 5) {
+          newsToggle.hidden = true;
+        } else {
+          newsToggle.addEventListener('click', function() {
+            const isExpanded = newsToggle.getAttribute('aria-expanded') === 'true';
+            newsList.classList.toggle('is-collapsed', isExpanded);
+            newsToggle.setAttribute('aria-expanded', String(!isExpanded));
+            newsToggle.textContent = isExpanded ? 'Show more' : 'Show less';
+          });
+        }
       }
 
       if ('IntersectionObserver' in window) {
