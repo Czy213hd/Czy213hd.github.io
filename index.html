@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260827-news-fold">
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260904-engineering-projects">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
@@ -65,7 +65,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="section-body">
           <p>Hello! I am <strong>Zhongyu Chen</strong>, a junior undergraduate in <a href="https://mechse.illinois.edu" target="_blank" rel="noopener noreferrer">mechanical engineering</a> at Zhejiang University and the University of Illinois Urbana-Champaign. I am also a robotics researcher at the <a href="https://physicalintelligence-lab.github.io/" target="_blank" rel="noopener noreferrer">Physical Intelligence Lab</a> under the supervision of <a class="text-strong-link" href="https://scholar.google.com/citations?user=sFTLO0EAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Prof. Hua Chen</a>.</p>
-          <p>My research focuses on <strong>robotics</strong>, especially dexterous loco-manipulation. My ultimate goal is to become a full-stack engineer who can help robots perform more real-world activities and become more intelligent. Feel free to reach out for communication and collaboration.</p>
+          <p>My research focuses on <strong>whole-body control and loco-manipulation for legged robots</strong>, with an emphasis on reinforcement learning, sim-to-real deployment, and real-world mobile manipulation. My long-term goal is to build general-purpose robots that can robustly interact with complex real-world environments. Feel free to reach out for communication and collaboration.</p>
         </div>
       </div>
 
@@ -100,14 +100,35 @@
           </div>
           <div class="card">
             <div class="experience-item">
-              <img src="assets/img/UIUC.png" alt="University of Illinois at Urbana-Champaign" class="institution-logo">
+              <img src="assets/img/UIUC.png" alt="University of Illinois Urbana-Champaign" class="institution-logo">
               <div class="experience-content">
-                <p class="exp-title"><strong>University of Illinois at Urbana-Champaign</strong></p>
+                <p class="exp-title"><strong>University of Illinois Urbana-Champaign</strong></p>
                 <p class="exp-detail">B.S. in Mechanical Engineering</p>
                 <p class="exp-period">2023 - 2027</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="section" id="research-experience">
+        <h2 class="section-title">Research Experience</h2>
+        <div class="section-body research-experience-list">
+          <article class="research-experience-item">
+            <p class="exp-title"><strong><a href="https://physicalintelligence-lab.github.io/" target="_blank" rel="noopener noreferrer">Physical Intelligence Lab</a></strong> — Undergraduate Researcher</p>
+            <p class="exp-period">Mar 2026 – Present</p>
+            <p class="exp-detail">Whole-body reinforcement learning and bipedal loco-manipulation.</p>
+          </article>
+          <article class="research-experience-item">
+            <p class="exp-title"><strong><a href="https://rvclab.github.io" target="_blank" rel="noopener noreferrer">RVC Lab</a></strong> — Undergraduate Researcher</p>
+            <p class="exp-period">Jun 2026 – Present</p>
+            <p class="exp-detail">Real-world language-guided bimanual vision-tactile manipulation.</p>
+          </article>
+          <article class="research-experience-item">
+            <p class="exp-title"><strong><a href="https://hawkrobo.com" target="_blank" rel="noopener noreferrer">HawkRobo</a></strong> — Research Intern</p>
+            <p class="exp-period">Aug 2026</p>
+            <p class="exp-detail">Short-term robotics research internship.</p>
+          </article>
         </div>
       </div>
 
@@ -175,33 +196,6 @@
         </div>
       </div>
 
-      <div class="section" id="course-project">
-        <h2 class="section-title">Course Project</h2>
-        <div class="section-body">
-          <div class="project-list">
-            <article class="project-entry">
-              <figure class="project-thumb">
-                <img src="assets/img/course-project/course-project1.gif?v=20260724" alt="Course project demo" loading="lazy">
-              </figure>
-              <div class="project-info">
-                <h3>ME 270</h3>
-                <p class="project-venue"><em>Single-motor quadruped stair-climbing robot</em></p>
-              </div>
-            </article>
-
-            <article class="project-entry">
-              <figure class="project-thumb">
-                <img src="assets/img/course-project/course-project2.gif?v=20260724" alt="Course project demo" loading="lazy">
-              </figure>
-              <div class="project-info">
-                <h3>ME 370</h3>
-                <p class="project-venue"><em>Single-motor gear-driven robot for straight-line walking and synchronized cube dropping every 2 m</em></p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
       <div class="section" id="teaching">
         <h2 class="section-title">Teaching</h2>
         <div class="section-body">
@@ -209,6 +203,26 @@
             <li>ECE 110: Introduction to Electronics, ZJU-UIUC Institute (Spring 2026)</li>
             <li>ME 270: Design for Manufacturability, ZJU-UIUC Institute (Fall 2026)</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="section engineering-projects" id="engineering-projects">
+        <h2 class="section-title">Selected Engineering Projects</h2>
+        <div class="section-body engineering-project-grid">
+          <article class="engineering-project-card">
+            <img src="assets/img/course-project/course-project1.gif?v=20260724" alt="ME 270 stair-climbing robot" loading="lazy">
+            <div>
+              <h3>ME 270</h3>
+              <p>Single-motor quadruped stair-climbing robot</p>
+            </div>
+          </article>
+          <article class="engineering-project-card">
+            <img src="assets/img/course-project/course-project2.gif?v=20260724" alt="ME 370 gear-driven robot" loading="lazy">
+            <div>
+              <h3>ME 370</h3>
+              <p>Single-motor gear-driven walking and cube-dropping robot</p>
+            </div>
+          </article>
         </div>
       </div>
 
@@ -265,7 +279,7 @@
 
     <footer class="site-footer">
       <p>
-        &copy; 2026 Zhongyu Chen. All rights reserved. Last updated: Aug 2026.
+        &copy; 2026 Zhongyu Chen. All rights reserved. Last updated: Sep 2026.
       </p>
     </footer>
   </div>

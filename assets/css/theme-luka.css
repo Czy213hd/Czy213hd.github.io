@@ -450,6 +450,59 @@ body.theme-luka .exp-period {
   font-weight: 500;
 }
 
+body.theme-luka .research-experience-list {
+  display: grid;
+  gap: 22px;
+}
+
+body.theme-luka .research-experience-item p {
+  margin: 0 0 3px;
+}
+
+body.theme-luka .research-experience-item .exp-title {
+  font-size: 16px;
+}
+
+body.theme-luka .research-experience-item .exp-detail {
+  margin-top: 6px;
+}
+
+body.theme-luka .engineering-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.theme-luka .engineering-project-card {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--luka-border);
+  border-radius: 10px;
+}
+
+body.theme-luka .engineering-project-card img {
+  width: 84px;
+  height: 62px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+body.theme-luka .engineering-project-card h3 {
+  margin: 0 0 4px;
+  color: var(--luka-text);
+  font-size: 15px;
+}
+
+body.theme-luka .engineering-project-card p {
+  margin: 0;
+  color: var(--luka-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 body.theme-luka .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -886,6 +939,10 @@ body.theme-luka strong {
   body.theme-luka .institution-logo {
     width: 44px;
     height: 44px;
+  }
+
+  body.theme-luka .engineering-project-grid {
+    grid-template-columns: 1fr;
   }
 
   body.theme-luka .gallery-grid {
