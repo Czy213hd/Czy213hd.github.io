@@ -679,6 +679,32 @@ body.theme-luka .project-links a:focus-visible {
   }
 }
 
+body.theme-luka .project-links--bracketed {
+  gap: 8px;
+  align-items: center;
+}
+
+body.theme-luka .project-resource {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--luka-secondary);
+  font-size: 14px;
+}
+
+body.theme-luka .project-links--bracketed a {
+  font-size: 14px;
+}
+
+body.theme-luka .project-links--bracketed a::after {
+  content: none;
+}
+
+body.theme-luka .project-resource [aria-disabled="true"] {
+  cursor: default;
+  font-weight: 500;
+}
+
 body.theme-luka .section-body > .project-card + .project-card {
   margin-top: 28px;
 }
