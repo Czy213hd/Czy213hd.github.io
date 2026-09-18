@@ -278,23 +278,16 @@ body.theme-luka.gallery-page .content {
   padding: 92px 22px 48px;
 }
 
+/* Keep content visible even when JavaScript is unavailable or fails. */
 body.theme-luka .section {
   margin-bottom: 44px;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-body.theme-luka .section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 body.theme-luka .section-title {
-  display: inline-block;
-  margin: 0 0 18px;
-  padding-bottom: 10px;
-  border-bottom: 4px solid var(--luka-text);
+  display: block;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--luka-border);
   color: var(--luka-text);
   font-size: 19px;
   font-weight: 600;
@@ -559,13 +552,6 @@ body.theme-luka .gallery-masonry .gallery-item img {
 body.theme-luka .project-card {
   font-size: 15px;
   line-height: 1.7;
-}
-
-body.theme-luka #projects > .section-title {
-  display: block;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--luka-border);
 }
 
 body.theme-luka .project-list {
