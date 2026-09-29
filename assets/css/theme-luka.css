@@ -588,6 +588,11 @@ body.theme-luka .project-thumb video {
   background: var(--luka-social-bg);
 }
 
+body.theme-luka .project-thumb--contain img {
+  object-fit: contain;
+  background: #fff;
+}
+
 body.theme-luka .project-info h3 {
   margin: 0 0 8px;
   color: var(--luka-text);
