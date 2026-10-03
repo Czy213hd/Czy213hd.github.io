@@ -496,6 +496,13 @@ body.theme-luka .engineering-project-card p {
   line-height: 1.45;
 }
 
+body.theme-luka .engineering-project-card .engineering-project-school {
+  margin-bottom: 2px;
+  color: var(--luka-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 body.theme-luka .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -589,7 +596,8 @@ body.theme-luka .project-thumb video {
 }
 
 body.theme-luka .project-thumb--contain img {
-  object-fit: contain;
+  aspect-ratio: auto;
+  object-fit: initial;
   background: #fff;
 }
 
