@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Patent Summary | Zhongyu Chen</title>
+  <meta name="description" content="English summary of Chinese patent application CN 122144105 A concerning an underwater robot with autonomous tool replacement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #faf9f6;
+      --surface: #fff;
+      --text: #3d3929;
+      --secondary: #817a69;
+      --border: #d9d6cf;
+      --link: #286f8f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #1d1d1b;
+        --surface: #252522;
+        --text: #eeeadd;
+        --secondary: #bbb4a3;
+        --border: #45443f;
+        --link: #77bddb;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    main {
+      width: min(860px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 64px 0 80px;
+    }
+
+    a { color: var(--link); }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 21px;
+    }
+
+    .metadata {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 24px;
+      margin: 28px 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .metadata p { margin: 0; }
+    .label { color: var(--secondary); }
+
+    .notice {
+      margin-top: 34px;
+      padding: 14px 18px;
+      border-left: 3px solid var(--link);
+      color: var(--secondary);
+      background: var(--surface);
+    }
+
+    @media (max-width: 600px) {
+      main { padding-top: 36px; }
+      .metadata { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back-link" href="index.html#projects">← Back to Research</a>
+
+    <h1>Underwater Robot Capable of Autonomously Replacing Operational Tools and Method Thereof</h1>
+
+    <div class="metadata">
+      <p><span class="label">Publication number</span><br><strong>CN 122144105 A</strong></p>
+      <p><span class="label">Application number</span><br><strong>CN 202610640139.5</strong></p>
+      <p><span class="label">Applicant</span><br><strong>Zhejiang University</strong></p>
+      <p><span class="label">Publication date</span><br><strong>June 5, 2026</strong></p>
+    </div>
+
+    <h2>Summary</h2>
+    <p>This invention presents an underwater robot and a corresponding method for autonomously replacing operational tools. The robot body vertically integrates propulsion, battery, and main-control compartments and connects to interchangeable tool modules through a guided magnetic docking interface.</p>
+
+    <p>A multi-camera perception system detects optical beacons on each tool module and estimates its relative pose. The robot uses this pose information to identify the tool, approach it, align the docking interfaces, and complete attachment or detachment automatically. Magnetic and Hall-effect sensing provides docking-state feedback, while non-contact signaling enables tool control after connection.</p>
+
+    <h2>Key Contributions</h2>
+    <ul>
+      <li>Autonomous underwater replacement of task-specific tool modules.</li>
+      <li>Vision-guided localization, identification, approach, and docking.</li>
+      <li>Guided electromagnetic attachment with docking-state feedback.</li>
+      <li>A modular architecture that expands the robot's capabilities in complex underwater environments.</li>
+    </ul>
+
+    <p><a href="assets/img/project3/patent.pdf?v=0316753924" target="_blank" rel="noopener noreferrer">View the official Chinese patent document</a></p>
+
+    <p class="notice"><strong>Translation notice:</strong> This page is an unofficial English summary provided for accessibility. The official Chinese patent document is the authoritative source.</p>
+  </main>
+</body>
+</html>
