@@ -283,6 +283,60 @@ body.theme-luka .section {
   margin-bottom: 44px;
 }
 
+body.theme-luka .affiliation-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 44px;
+  padding: 26px 20px;
+  background: #fff;
+  border-top: 1px solid var(--luka-border);
+  border-bottom: 2px solid var(--luka-border);
+}
+
+body.theme-luka .affiliation-strip a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 88px;
+}
+
+body.theme-luka .affiliation-strip a:focus-visible {
+  outline: 2px solid #245b96;
+  outline-offset: 5px;
+}
+
+body.theme-luka .affiliation-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88px;
+  object-fit: contain;
+}
+
+body.theme-luka .affiliation-strip .affiliation-seal {
+  width: 80px;
+  height: 80px;
+}
+
+body.theme-luka .affiliation-strip .affiliation-hawkrobo {
+  filter: brightness(0);
+}
+
+@media (max-width: 640px) {
+  body.theme-luka .affiliation-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 28px;
+    padding: 22px;
+  }
+
+  body.theme-luka .affiliation-strip img {
+    max-width: 150px;
+  }
+}
+
 body.theme-luka .section-title {
   display: block;
   margin: 0 0 24px;
