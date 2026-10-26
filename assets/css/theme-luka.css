@@ -316,6 +316,13 @@ body.theme-luka .affiliation-strip img {
   height: auto;
   max-height: 88px;
   object-fit: contain;
+  transition: scale 0.2s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body.theme-luka .affiliation-strip a:hover img {
+    scale: 1.1;
+  }
 }
 
 body.theme-luka .affiliation-strip .affiliation-seal {
