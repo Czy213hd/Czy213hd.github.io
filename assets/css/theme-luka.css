@@ -301,7 +301,7 @@ body.theme-luka .affiliation-strip a {
   justify-content: center;
   min-width: 0;
   height: 88px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body.theme-luka .affiliation-strip a:focus-visible {
@@ -312,16 +312,17 @@ body.theme-luka .affiliation-strip a:focus-visible {
 body.theme-luka .affiliation-strip img {
   display: block;
   width: 140px;
-  max-width: 100%;
+  max-width: 88%;
   height: auto;
   max-height: 88px;
   object-fit: contain;
-  transition: scale 0.2s ease;
+  transform-origin: center;
+  transition: scale 0.24s ease;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   body.theme-luka .affiliation-strip a:hover img {
-    scale: 1.1;
+    scale: 1.06;
   }
 }
 
@@ -331,10 +332,10 @@ body.theme-luka .affiliation-strip .affiliation-seal {
 }
 
 body.theme-luka .affiliation-strip .affiliation-hawkrobo {
-  width: 166px;
-  max-width: 118%;
+  width: 156px;
+  max-width: 100%;
   max-height: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
   transform: translateY(3px);
   filter: brightness(0);
 }
@@ -347,7 +348,11 @@ body.theme-luka .affiliation-strip .affiliation-hawkrobo {
   }
 
   body.theme-luka .affiliation-strip img {
-    max-width: 150px;
+    max-width: min(140px, 88%);
+  }
+
+  body.theme-luka .affiliation-strip .affiliation-hawkrobo {
+    max-width: min(156px, 100%);
   }
 }
 
